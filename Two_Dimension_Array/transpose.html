@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Transposition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Matrix Transposition</h1>
+
+<table>
+    <tr>
+        <th>Row</th>
+        <th>Column</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td><input type="number" id="value11"></td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td><input type="number" id="value12"></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>1</td>
+        <td><input type="number" id="value21"></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>2</td>
+        <td><input type="number" id="value22"></td>
+    </tr>
+</table>
+
+<button onclick="checkSymmetry()">Check Symmetry</button>
+
+<p id="result"></p>
+
+<script>
+    function checkSymmetry() {
+        // Retrieve values from input fields
+        let arr = [
+            [parseInt(document.getElementById('value11').value), parseInt(document.getElementById('value12').value)],
+            [parseInt(document.getElementById('value21').value), parseInt(document.getElementById('value22').value)]
+        ];
+
+        // Transpose the matrix
+        let transposed = [
+            [arr[0][0], arr[1][0]],
+            [arr[0][1], arr[1][1]]
+        ];
+
+        // Check for symmetry
+        let is_trans = true;
+        for (let i = 0; i < 2; i++) {
+            for (let j = 0; j < 2; j++) {
+                if (arr[i][j] !== transposed[i][j]) {
+                    is_trans = false;
+                    break;
+                }
+            }
+        }
+
+        // Display result
+        document.getElementById('result').innerText = is_trans ? "Symmetric Matrix" : "Non-Symmetric Matrix";
+    }
+</script>
+
+</body>
+</html>

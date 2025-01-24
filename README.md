@@ -1,6 +1,6 @@
-C++ Programming Fundamentals
+#C++ Programming Fundamentals
 
-This repository contains the code I developed during my C++ Programming Fundamentals course. It covers a range of fundamental C++ concepts, including:
+#This repository contains the code I developed during my C++ Programming Fundamentals course. It covers a range of fundamental C++ concepts, including:
 
 Data Types: Integers, Floats, Doubles, Characters, Booleans, etc.
 Operators: Arithmetic, Relational, Logical, Bitwise operators.
